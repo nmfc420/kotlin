@@ -1,0 +1,167 @@
+//Write a Kotlin program to print largest from three numbers.
+
+import java.util.*
+fun main()
+{
+    val sc=Scanner(System.`in`)
+    println("Enter First Number: ")
+    var first = sc.nextInt()
+    println("Enter Second Number: ")
+    var second = sc.nextInt()
+    println("Enter Third Number: ")
+    var third = sc.nextInt()
+    
+    val largest = if(first>second && first>third)
+        first
+    else if(second > third)
+        second
+    else 
+    third
+    
+    println("The largest number is $largest")
+}
+
+____________________________________________________________________________________
+____________________________________________________________________________________
+
+Write a Kotlin program to read a number and print its multiplication table in given format(2*1=2
+2*2=4…)
+
+import java.util.*
+fun main()
+{
+    val sc=Scanner(System.`in`)
+    println("Enter the number: ")
+    val num=sc.nextInt()
+    for (i in 1..10)
+    {
+        val result = num * i
+        println("$num*$i = $result")
+    }
+}
+
+___________________________________________________________________________________
+___________________________________________________________________________________
+
+//Write a Kotlin program to read a lowercase character and check whether it is consonant or 
+vowel
+
+import java.util.*
+fun main()
+{
+    val sc=Scanner(System.`in`)
+    println("Enter a lowercase character: ")
+    var ch = sc.next().first()
+    var asc=ch.code
+    if(asc>=97 && asc<=122)
+    {
+        var res = when(ch)
+        {
+            'a','e','i','o','u' -> "Vowel"
+            else -> "Consonent"
+        }
+        print("Character is $res")
+    }
+    else
+    {
+        println("Invalid Character")
+    }
+        
+}
+___________________________________________________________________________________
+___________________________________________________________________________________
+
+//Write a program to read a number and print sum of odd digits of the number using while loop
+
+import java.util.*
+
+fun main() {
+    println("Enter a number:")
+    var number = readLine()!!.toInt()
+    var sum = 0
+
+    while (number > 0) {
+        val digit = number % 10
+        if (digit % 2 != 0) {
+            sum += digit
+        }
+        number /= 10
+    }
+
+    println("The sum of the odd digits in the number is $sum")
+}
+
+___________________________________________________________________________________
+___________________________________________________________________________________
+
+// Write a program to demonstrate constructor overloading.
+
+import java.util.*
+class Area
+{
+    var x:Int
+    var y:Int=0
+    constructor(rad:Int)
+    {
+        x=rad
+    }
+    constructor(len:Int,bre:Int)
+    {
+        x=len
+        y=bre
+    }
+    fun carea()
+    {
+        var a=3.14*x*x
+        println("Area of a circle=$a")
+    }
+    fun rarea()
+    {
+        var a=x*y
+        println("Area of a rectangle is $a")
+    }
+}
+fun main()
+{
+    var o1 = Area(3)
+    var o2 = Area(3,4)
+    o1.carea()
+    o2.rarea()
+}
+
+____________________________________________________________________________________
+____________________________________________________________________________________
+
+
+//Write a program to print demonstrate exception handling. 
+
+import java.util.*
+fun main()
+{
+    var div = 0
+    var sc=Scanner(System.`in`)
+    try
+    {
+        println("Enter numerator and denominator")
+        var x=sc.nextInt()
+        var y=sc.nextInt()
+        div=x/y
+    }
+    catch(e:ArithmeticException)
+    {
+        println(e.message)
+    }
+    catch(e:InputMismatchException)
+    {
+        println("Wrong Input")
+    }
+    finally
+    {
+        println("Division = $div")
+    }
+}
+
+______________________________________________________________________________________
+______________________________________________________________________________________
+
+
